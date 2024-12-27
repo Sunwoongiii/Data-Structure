@@ -92,3 +92,93 @@ from ex1 ~ ex3 is a [Static Array]
     arr = (int *)realloc(arr, 20 * sizeof(int)); // Resize to 20
 */
 
+//ex4: malloc
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main(){
+//   int i,n, *data;
+//   printf("How many integers do you want to generate: ");
+//   scanf("%d", &n);
+
+//   data = malloc(n * sizeof(int));
+//   for(int i = 0; i < n; i++){
+//     data[i] = rand();
+//     printf("%d\n", data[i]);
+//   }
+//   free(data);
+//   return 0;
+// }
+
+/*
+once you used your DA, you SHOULD free() the data
+*/
+
+//ex5: realloc
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main(){
+//   int i,n,m,*data;
+//   printf("How many integers do you want to generate?: ");
+//   scanf("%d", &n);
+//   data = malloc(n * sizeof(int));
+//   printf("memory allocated at %p\n", data);
+
+//   for(i = 0; i < n; i++) data[i] = rand();
+
+//   printf("How many integer do you want to generate additionally?: ");
+//   scanf("%d", &m);
+//   data = realloc(data, (n+m) *sizeof(int));
+//   printf("memory reallocated at %p\n", data);
+  
+//   for(i = 0; i < n + m; i++)data[i] = rand();
+
+//   for(i = 0; i < n+m; i++)printf("%d\n", data[i]);
+//   free(data);
+//   return 0;
+// }
+
+/*
+the memory address can differ once we reallocate the data
+*/
+
+//ex6: Two Dimension
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int** make2dArray(int, int);
+
+// int main(){
+//   int i,j;
+//   int **matrix;
+
+//   matrix = make2dArray(5,5);
+//   for(int i = 0; i < 5; i++){
+//     for(int j = 0; j < 5; j++){
+//       matrix[i][j] = i * 5 + j + 1;
+//       printf("%2d ", matrix[i][j]);
+//     }
+//     printf("\n");
+//   }
+
+//   for(int i = 0; i < 5; i++) free(matrix[i]);
+//   free(matrix);
+//   return 0;
+// }
+
+// int** make2dArray(int rows, int cols){
+//   int **x, i;
+//   x = malloc(rows * sizeof(*x));
+  
+//   for(i = 0; i < rows; i++){
+//     x[i] = malloc(cols * sizeof(**x));
+//   }
+//   return x;
+// }
+
+/*
+2-D array: double pointer, points to an array of <type>* (<type> pointer), after memory allocation, it stores the address of the first row.
+2-D array[index]: <type> pointer, points to the columns in the first row.
+2-D arr[intdex][index]: <type> value
+*/
