@@ -13,7 +13,7 @@ typedef struct {
 
 void initStack(Stack *s, int);
 void push(Stack *s, int);
-void resize(Stack *s);
+void resize(Stack *s); 
 void pop(Stack *s);
 int front(Stack *s);
 int back(Stack *s);
