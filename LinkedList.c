@@ -7,7 +7,7 @@ struct Node{
 };
 
 typedef struct Node *PtrToNode; //간선
-typedef PtrToNode List; //첫번째 이전 더미 노드드
+typedef PtrToNode List; //첫번째 이전 더미 노드
 typedef PtrToNode Position; //특정 노드
 
 List MakeEmpty(List L){
