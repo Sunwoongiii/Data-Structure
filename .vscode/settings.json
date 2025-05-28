@@ -36,6 +36,7 @@
     "unordered_map": "cpp",
     "utility": "cpp",
     "variant": "cpp",
-    "map": "cpp"
+    "map": "cpp",
+    "BST.C": "cpp"
   }
 }
