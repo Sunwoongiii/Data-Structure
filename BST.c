@@ -12,7 +12,7 @@ typedef struct Node{
 void insertTreeNode(Node** p, int key, int value);
 void printTreeInorder(Node* p);
 void deleteTreeNode(Node** p, int key);
-void threeWaJoin(Node* mid, Node* small, Node* big);
+void threeWayJoin(Node* mid, Node* small, Node* big);
 void splitTree(Node* root, int key, Node** small, Node** mid, Node** big);
 
 int main(){
@@ -146,7 +146,7 @@ void deleteTreeNode(Node** p, int key){
   }
 }
 
-void treeWayJoin(Node* mid, Node* small, Node* big){
+void threeWayJoin(Node* mid, Node* small, Node* big){
   if(mid == NULL) return;
   mid->leftChild = small;
   mid->rightChild = big;
