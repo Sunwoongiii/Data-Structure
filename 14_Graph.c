@@ -158,30 +158,30 @@ Biconnected Components
   1. Get a spanning tree of the graph using DFS
 
 */
-#include <stdio.h>
-#include <stdlib.h>
-#define MIN2(x,y) ((x) < (y) ? (x) : (y))
+// #include <stdio.h>
+// #include <stdlib.h>
+// #define MIN2(x,y) ((x) < (y) ? (x) : (y))
 
-typedef struct node* nodePointer;
-typedef struct node{
-  int vertex;
-  nodePointer link;
-}Node;
+// typedef struct node* nodePointer;
+// typedef struct node{
+//   int vertex;
+//   nodePointer link;
+// }Node;
 
-nodePointer graph[101];
-int dfn[101], low[101], num = 0;
-int isArticulation[101];
+// nodePointer graph[101];
+// int dfn[101], low[101], num = 0;
+// int isArticulation[101];
 
-void dfnlow(int u, int v){
-  nodePointer ptr;
-  int w;
-  dfn[u] = low[u] = num++;
-  for(ptr = graph[u]; ptr; ptr = ptr->link){
-    w = ptr->vertex;
-    if(dfn[w] < 0){
-      dfnlow(w,u);
-      low[u] = MIN2(low[u], low[w]);
-    }
-    else if(w != v) low[u] = MIN2(low[u], dfn[w]);
-  }
-}
+// void dfnlow(int u, int v){
+//   nodePointer ptr;
+//   int w;
+//   dfn[u] = low[u] = num++;
+//   for(ptr = graph[u]; ptr; ptr = ptr->link){
+//     w = ptr->vertex;
+//     if(dfn[w] < 0){
+//       dfnlow(w,u);
+//       low[u] = MIN2(low[u], low[w]);
+//     }
+//     else if(w != v) low[u] = MIN2(low[u], dfn[w]);
+//   }
+// }
